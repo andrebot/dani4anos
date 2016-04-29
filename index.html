@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="lib/css/materialize.min.css" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="app.css"/>
+  </head>
+
+  <body class="white-hearts">
+
+    <div class="row">
+      <div class="col s12">
+        <div class="row">
+          <div class="col s10 offset-s1">
+            <div class="card-panel white lighten-5 z-depth-1">
+              <div class="row valign-wrapper">
+                <div class="col s2">
+                  <img src="imgs/andre.jpg" class="circle responsive-img andre-photo">
+                </div>
+                <div class="col s10">
+                  <div class="card-panel grey lighten-5 z-depth-1" id="message-holder">
+
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s3 offset-s9">
+                  <button class="waves-effect waves-light btn right" id="proximo"><i class="material-icons right">send</i>Próximo</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" id="respostas" style="display: none;">
+          <div class="col s10 offset-s1">
+            <div class="card-panel red lighten-5 z-depth-1">
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="resposta-charada" type="text"></input>
+                  <label for="resposta-charada">Sua resposta é...</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s3">
+                  <button class="waves-effect waves-light btn modal-trigger" data-target="modal-dica" id="dica"><i class="material-icons left">info</i>Dica</button>
+                </div>
+                <div class="col s4 offset-s5">
+                  <button class="waves-effect waves-light btn right" id="responder"><i class="material-icons right">thumb_up</i>Responder</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal-dica" class="modal">
+      <div class="modal-content">
+        <h4>Dica</h4>
+        <p id="dica-texto"></p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn">Fechar</a>
+      </div>
+    </div>
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="lib/js/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/js/jquery.fireworks.js"></script>
+    <script type="text/javascript" src="lib/js/materialize.min.js"></script>
+    <script type="text/javascript" src="configEstados.js"></script>
+    <script type="text/javascript" src="estado.js"></script>
+    <script type="text/javascript">
+      if (!localStorage.daniCharada) {
+        localStorage.setItem('daniCharada', 0);
+        localStorage.setItem('charadaRespondida', true);
+      } else if (localStorage.daniCharada >= configEstados.length) {
+        localStorage.setItem('daniCharada', 0);
+      }
+
+      var textContainer = $('#message-holder');
+      var responderBtn  = $('#responder');
+      var dicaContainer = $('#dica-texto');
+      var proximoBtn    = $('#proximo');
+      var respostaInput = $('#resposta-charada');
+      var respostaLabel = $('#resposta-charada ~ label');
+      var estados       = [];
+      var estadoAtual;
+
+      for (var index in configEstados) {
+        estados.push(new estado(configEstados[index]));
+      }
+
+      estadoAtual = estados[localStorage.daniCharada];
+
+      function disableNextBtn () {
+        if (estadoAtual.isRiddle) {
+          if (JSON.parse(localStorage.charadaRespondida)) {
+            proximoBtn.removeClass('disabled');
+            proximoBtn.removeAttr('disabled');
+          } else if (!proximoBtn.hasClass('disabled')){
+            proximoBtn.addClass('disabled');
+            proximoBtn.attr('disabled', 'disabled');
+          }
+        } else {
+          if (localStorage.daniCharada == configEstados.length - 1) {
+            proximoBtn.addClass('hide');
+          }
+          proximoBtn.removeClass('disabled');
+          proximoBtn.removeAttr('disabled');
+        }
+      }
+
+      function proximoEstado () {
+        textContainer.slideUp('slow', function () {
+
+          $('#proximo').addClass('disabled');
+
+          if (localStorage.daniCharada < estados.length - 1) {
+            localStorage.daniCharada++;
+          }
+
+          mudarEstado(localStorage.daniCharada);
+
+          textContainer.slideDown('slow');
+          respostaInput.val('');
+          respostaLabel.removeClass('active');
+        });
+      }
+
+      function mudarEstado (index) {
+        estadoAtual = estados[index];
+
+        textContainer.html(estadoAtual.menssagem);
+
+        if (estadoAtual.isRiddle) {
+          $("#respostas").fadeIn('slow');
+          localStorage.setItem('charadaRespondida', false);
+        } else {
+          $("#respostas").fadeOut('slow');
+        }
+
+        dicaContainer.html(estadoAtual.dica);
+
+        disableNextBtn();
+      }
+
+      $("#dica").leanModal();
+
+      mudarEstado(localStorage.daniCharada);
+
+      $('#proximo').on('click', function () {
+        proximoEstado();
+      });
+
+      $('#responder').on('click', function (evt) {
+        var resposta = $('#resposta-charada').val();
+
+        if (estadoAtual.resposta.test(resposta)) {
+          responderBtn.addClass('disabled');
+          responderBtn.attr('disabled', 'disabled');
+          $('body').fireworks();
+
+          Materialize.toast('Resposta correta!', 5000, 'success');
+
+          setTimeout(function () {
+            $('body').fireworks('destroy');
+            localStorage.setItem('charadaRespondida', true);
+            proximoEstado();
+            responderBtn.removeClass('disabled');
+            responderBtn.removeAttr('disabled');
+          }, 5000);
+        } else {
+          Materialize.toast('Não é isso meu bem, mas não desista!', 5000, 'fail');
+        }
+      });
+
+    </script>
+  </body>
+</html>

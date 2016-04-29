@@ -1,0 +1,13 @@
+.white-hearts {
+  background-image: url('imgs/hearts-white.jpg');
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+.success {
+  background-color: #1b5e20;
+}
+
+.fail {
+  background-color: #b71c1c;
+}
