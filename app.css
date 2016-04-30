@@ -1,7 +1,5 @@
 .white-hearts {
-  background-image: url('imgs/hearts-white.jpg');
-  background-repeat: no-repeat;
-  height: 100%;
+  background: #fff url('imgs/hearts-white.jpg') repeat-y right top;
 }
 
 .success {
@@ -12,6 +10,24 @@
   background-color: #b71c1c;
 }
 
-body {
-  font-size: 25px;
+.icon-right {
+  margin-left: 10px;
+}
+
+.icon-left {
+  margin-right: 10px;
+}
+
+.input-field label {
+  font-size: 2rem;
+}
+
+input[type=text] {
+  height: 4rem;
+  font-size: 2rem;
+}
+
+.input-field label.active {
+  font-size: 1.8rem;
+  margin-top: 10px;
 }
