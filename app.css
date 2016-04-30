@@ -10,24 +10,6 @@
   background-color: #b71c1c;
 }
 
-.icon-right {
-  margin-left: 10px;
-}
-
-.icon-left {
-  margin-right: 10px;
-}
-
-.input-field label {
-  font-size: 2rem;
-}
-
-input[type=text] {
-  height: 4rem;
-  font-size: 2rem;
-}
-
-.input-field label.active {
-  font-size: 1.8rem;
+.under-btn {
   margin-top: 10px;
 }

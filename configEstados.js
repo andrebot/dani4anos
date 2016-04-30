@@ -112,13 +112,13 @@ var configEstados = [
     resposta: 'indescritível', 
     paragrafos: [
       'Não sou poeta, sou péssimo em português e não tenho o dom da rima (me falta vocabulário), mas aqui vai um poema:',
-      'Impossível falar como foi crescer ao seu lado',
-      'Saber que duas personalidades diferentes',
-      'Aquela mais agitada com aquele mais calado',
-      'Bastariam para criar sentimentos congruentes',
-      'Eis que te apresento',
-      'Levemente nesse poema',
-      'Essa doçura de sentimento'
+      'Identifiquei em você',
+      'Sem sombra de dúvida',
+      'Aquilo que queria dizer',
+      'Bem escondida',
+      'E ainda sim, óbvia',
+      'Levemente delicada',
+      'Enquanto te via'
     ]
   },
   {
@@ -127,7 +127,7 @@ var configEstados = [
       'Como um poeta eu sou um ótimo programador, caramba. Tomara que você não tenha mostrado isso para ninguém.',
       'Essa última aposto que foi bem difícil achar o nome da bele, hahahahahaha, to morrendo de medo de isso aqui ter ficado muito grande! E você demorar mais tempo que o previsto.',
       'Mas eu confio que você é inteligente e nada disso vai desafia-la de verdade. Mas espero que pelo menos esteja sendo divertido.',
-      'Indescritível, além da resposta da última charada, é como eu me sinto sobre esses quatro anos com você. Como eu descrevo nossas viagens? Indescritível. Como descrevo nossas sonecas na tarde de domingo? Indescritível (mesmo quando esta quente e a gente meio que fica separado so de mão dada). Como descrevo nossos sonhos para o futuro? Indescritível. Como descrevo a nossas vidas com o Fred? Indescritível',
+      'Indescritível, além da resposta da última charada, é como eu me sinto sobre esses quatro anos com você. Foi a palavra que vi escondida enquanto te via. Como eu descrevo nossas viagens? Indescritível. Como descrevo nossas sonecas na tarde de domingo? Indescritível (mesmo quando esta quente e a gente meio que fica separado so de mão dada). Como descrevo nossos sonhos para o futuro? Indescritível. Como descrevo a nossas vidas com o Fred? Indescritível.',
       'A única coisa que sei é que, no futuro, a gente construa mais momentos assim, que não podemos descrever, apenas viver.'
     ]
   },

@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Import Google Icon Font-->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
@@ -9,28 +10,25 @@
     <link type="text/css" rel="stylesheet" href="app.css"/>
   </head>
 
-  <!--<body class="white-hearts"> -->
+  <!-- <body class="white-hearts"> -->
   <body class="white-hearts">
-
   <div class="container">
     <div class="row">
       <div class="col s12">
         <div class="card-panel white lighten-5 z-depth-1">
-          <div class="row valign-wrapper">
-            <div class="col s2">
+          <div class="row">
+            <div class="col s5">
               <img src="imgs/andre.jpg" class="circle responsive-img andre-photo">
             </div>
-            <div class="col s10">
-              <div class="flow-text card-panel grey lighten-5 z-depth-1" id="message-holder">
+            <div class="col s12">
+              <div class="card-panel grey lighten-5 z-depth-1" id="message-holder">
               </div>
             </div>
           </div>
           <div class="row">
-            <div class="col s4 offset-s8">
-              <button class="waves-effect waves-light btn flow-text right" id="proximo">
-                Próximo<i class="material-icons icon-right">send</i>
-              </button>
-            </div>
+            <button class="col s12 waves-effect waves-light btn right" id="proximo">
+              Próximo<i class="material-icons icon-right right">send</i>
+            </button>
           </div>
         </div>
       </div>
@@ -48,16 +46,12 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col s3">
-                  <button class="waves-effect waves-light btn modal-trigger flow-text" data-target="modal-dica" id="dica">
-                    <i class="material-icons icon-left">info</i>Dica
-                  </button>
-                </div>
-                <div class="col s5 offset-s4">
-                  <button class="waves-effect waves-light btn right flow-text" id="responder">
-                    Responder<i class="material-icons icon-right">thumb_up</i>
-                  </button>
-                </div>
+                <button class="col s12 waves-effect green lighten-4 waves-light btn modal-trigger" data-target="modal-dica" id="dica">
+                  Dica
+                </button>
+                <button class="col s12 waves-effect waves-light btn under-btn" id="responder">
+                  Responder
+                </button>
               </div>
             </form>
           </div>
@@ -69,17 +63,17 @@
   <div id="modal-dica" class="modal">
     <div class="modal-content">
       <h4>Dica</h4>
-      <p id="dica-texto" class="flow-text"></p>
+      <p id="dica-texto"></p>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn flow-text">Fechar</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn">Fechar</a>
     </div>
   </div>
 
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="lib/js/jquery.min.js"></script>
-    <script type="text/javascript" src="lib/js/jquery.fireworks.js"></script>
     <script type="text/javascript" src="lib/js/materialize.min.js"></script>
+    <script type="text/javascript" src="lib/js/jquery.fireworks.js"></script>
     <script type="text/javascript" src="configEstados.js"></script>
     <script type="text/javascript" src="estado.js"></script>
     <script type="text/javascript">
