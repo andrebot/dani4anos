@@ -43,7 +43,7 @@ var configEstados = [
       'Eu sei que você fica chateada por eu não dormir tanto assim na casa dos seus pais, mas eu realmente fico sem graça de dormir lá. Mas isso esta para acabar! O apartamento do Buritis esta ficando pronto! Obaaaa!',
       'Tem bastante tempo que fico pensando em como será morar com você, sabe? Eu fico bem animado de pensar, mas ainda sim vem algumas incertezas do tipo: Será que ela vai implicar muito se eu ficar no computador? Teremos problemas compartilhando o banheiro? Será que iremos brigar mesmo por eu ficar comprando bobagem pra ficar comendo?',
       'Mas independente do que acontecer eu sei que vai vir muita coisa boa: nossos lanches a noite, filmes no nosso sofá delicioso com o Fred nos fazendo compania, a gente montando a sala, o escritório... Nossas noites frias dormindo agarradinhos, nossos domingos de preguiça!',
-      'Tenho certeza ue irei dormir pouco no sofá, hahahaha. Ok, agora vamos para a próxima charada!'
+      'Tenho certeza eu irei dormir pouco no sofá, hahahaha. Ok, agora vamos para a próxima charada!'
     ]
   },
   {
@@ -100,7 +100,7 @@ var configEstados = [
     charada: false,
     paragrafos: [
       'TAMBÉM TE AMO, BEM!!!!!!!!!!! S2',
-      'Eu achei uma gracinha quando você disse "Deus te ama... e eu também"! Não sei se te contei mas deu até friozinho na barriga quando você falou isso. Lembro que fiz você repetir isso umas três fezes no dia! Hahaha. Eu gosto de escutar essas coisas fofas que você fala pra mim.',
+      'Eu achei uma gracinha quando você disse "Deus te ama... e eu também"! Não sei se te contei mas deu até friozinho na barriga quando você falou isso. Lembro que fiz você repetir isso umas três vezes no dia! Hahaha. Eu gosto de escutar essas coisas fofas que você fala pra mim.',
       'A cada vez que eu falo "Eu te amo", pode ter certeza que coloco todas minhas intenções em cada palavra, =)',
       'Mas eu também gosto quando você fala "Eu te amo" de outras maneiras: quando você guarda um pedaço do seu chocolate pra me dar depois, quando você me liga de manhã para eu lembrar de fazer alguma coisa (mesmo que essa coisa seja acordar e ir pro trabalho), quando você puxa minha orelha quando eu to sendo difícil, quando você faz brincadeiras comigo, quando você me ouve, quando você divide suas frustrações comigo, quando você divide seus momentos de vitória comigo, quando você vai ver os filmes da Marvel e uma infinidade de coisas.',
       'Espero que eu consiga falar "Eu te amo" de várias formas para você também, do mesmo jeito que você faz comigo. Espero que você as perceba e que as guarde consigo, da melhor forma possível. Eu falo isso porque eu não consigo lembrar de todas as vezes que você disse "Eu te amo", mas a cada vez que você fala, eu apenas sinto esse seu amor e o guardo dentro de mim. E pra senti-lo bastar eu pensar em você. É assim que guardo nossos momentos juntos...',
